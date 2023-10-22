@@ -9,3 +9,15 @@ make
 ./sender
 ./receiver
 ```
+
+1. [Posix Message Queue](https://github.com/abbasraza/linux-ipc-wrappers/tree/main/PosixMsgQueue)
+
+```shell
+cd PosixMsgQueue
+make
+./Sender
+
+sender sent a message which will stay in the msg queue until receiver removes it
+
+./Receiver
+``` 
