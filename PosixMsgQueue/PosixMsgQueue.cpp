@@ -35,9 +35,17 @@ PosixMsgQueue::PosixMsgQueue(const std::string &queueName, mode_t permissions, s
 PosixMsgQueue::~PosixMsgQueue()
 {
     // Close and unlink the msg queue
+    
     // mq_close will only close the descriptor
     mq_close(m_queueDescriptor);
-    // mq_unlink will destroy the queue. Any pending messages will be lost
+
+    /*
+    mq_unlink() removes the specified message queue name.
+    The message queue name is removed immediately. The queue itself
+    is destroyed once any other processes that have the queue open; close their
+    descriptors referring to the queue.
+    All the messages remaining on the queue are lost.
+    */
     mq_unlink(m_queueName.c_str());
 }
 

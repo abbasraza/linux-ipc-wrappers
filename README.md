@@ -16,8 +16,13 @@ make
 cd PosixMsgQueue
 make
 ./Sender
-
+```
 sender sent a message which will stay in the msg queue until receiver removes it
 
 ./Receiver
+
+Check if queue exists:
+```shell
+ls /dev/mqueue/posix_mq
+
 ``` 
