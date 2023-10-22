@@ -19,7 +19,9 @@ make
 ```
 sender sent a message which will stay in the msg queue until receiver removes it
 
+```shell
 ./Receiver
+```
 
 Check if queue exists:
 ```shell
